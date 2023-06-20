@@ -1,23 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <time.h>
-#include <cstdio>
-#include <locale>
-
-/*
-Instruções:
-PARTE 1:
-    + Implementar a possibilidade de o usuário criar e armazenar usando arquivos em disco várias listas de palavras.
-    + Permitir ao usuário a modificação ou inclusão de uma nova lista.
-    + Você pode usar um menu para a escolha das opções do usuário.
-    - As palavras não poderão ter acentos ou caracteres especiais (como ç, por exemplo).
-    + As listas de palavras deverão ser armazenadas em vetores de estruturas (structs).
-    + O arquivo deverá ser salvo em formato CSV, separado por virgulas. Cada linha conterá uma lista de palavras.
-    + Quando o seu programa iniciar a execução, o arquivo deve ser lido e as listas armazenadas em memória.
-    + Quando o usuário escolher a opção fim do seu programa, a sua lista em memória deverá ser salva novamente em
-      disco no mesmo formato de antes, sobrescrevendo o arquivo original
-*/
+#include <cstdio> 
+#include <locale> 
 
 using namespace std;
 #define tam_maximo 10
