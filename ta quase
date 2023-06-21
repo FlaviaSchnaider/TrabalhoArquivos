@@ -3,6 +3,7 @@
 #include <string>
 #include <cstdio> 
 #include <locale> 
+#include <windows.h>
 
 using namespace std;
 #define tam_maximo 10
@@ -175,6 +176,7 @@ void verifica_temp() {
         csv_arquivo.close();
         temp_arquivo.close();
         remove("listaPalavras.temp");
+
     }
 }
 
@@ -185,9 +187,9 @@ void popular_lista(Lista listas[], int tam) {
     string linha;
     contador = contar_linhas_arquivo();
 
-    if (arquivo.is_open()) {
+    if (arquivo.is_open()) { // atualiza a lista de palavras
         while (getline(arquivo, linha)) {
-            listas[tam - 1].palavras[contador++];
+            listas[tam].palavras[contador++];
         }
         arquivo.close();
     }
@@ -207,10 +209,11 @@ int main()
 {
     int escolha, tam = 1;
     Lista* listas = new Lista[tam];
-    int cont_linhas = contar_linhas_arquivo();
 
     verifica_temp(); //arquivo de backup
+    //Sleep(1000);
     popular_lista(listas, tam);
+    int cont_linhas = contar_linhas_arquivo(); // contando linhas depois de popular
 
     if (cont_linhas > 1)
         listas = aumentar_vetor(listas, tam, cont_linhas - 1);
