@@ -3,7 +3,6 @@
 #include <string>
 #include <cstdio> 
 #include <locale> 
-#include <windows.h>
 
 using namespace std;
 #define tam_maximo 10
